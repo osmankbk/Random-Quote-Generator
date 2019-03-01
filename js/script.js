@@ -8,7 +8,7 @@ project 1 - A Random Quote Generator
 //Goal: exceed expectation
 
 //The comments below are in order of how i proceeded throug the Project
-//Create the quots array in a different file(quotes.js) to keep things organized
+//Created a different file(quotes.js) for my quotes to keep things organized
 
 
 //create a variable (timerOut) that holds the setInterval() methods and give it the printQuote() and 10000 millseconds for parameters

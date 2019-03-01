@@ -1,3 +1,5 @@
+//My array of object that holds my quotes
+
 var quotes = [
   {
     quote: "When we are no longer able to change a situation, we are challenged to change ourselves.",
