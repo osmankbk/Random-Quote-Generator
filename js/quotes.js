@@ -15,7 +15,7 @@ var quotes = [
   },
   {
     quote: "The ultimate measure of a man is not where he stands in time of comfort and convience, but where he stands at times of challenge and controversy.",
-    source: "Martin Luther King, jr.",
+    source: "Martin Luther King jr.",
     citation: "Strength to Love",
     year: "1963",
     tag: "Life"

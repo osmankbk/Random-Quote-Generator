@@ -16,6 +16,14 @@ function getRandomQuote(){
   return getQuotes;
 }
 
+function rgbColor(){
+ var randomRgb = 'rgb(';
+  randomRgb += Math.floor(Math.random() * 255) + ',';
+  randomRgb += Math.floor(Math.random() * 255) + ',';
+  randomRgb += Math.floor(Math.random() * 255);
+  randomRgb += ')';
+  return randomRgb;
+}
 
 
 
@@ -33,18 +41,19 @@ function getRandomQuote(){
 ***/
 function printQuote(){
   var randomQuote = getRandomQuote();
-  var quotesHTML = '<p class="quotes">' + randomQuote.quote + '</p>';
-    quotesHTML += '<p class="source">' + randomQuote.source;
+  var quotesHTML = '<p class="quote"> ' + randomQuote.quote + ' </p>';
+    quotesHTML += '<p class="source"> ' + randomQuote.source + ',';
       if(randomQuote.citation){
-        quotesHTML += '<span class"citation">' + randomQuote.citation + '</span>';
+        quotesHTML += '<span class"citation"> ' + randomQuote.citation + ' </span>';
     } if(randomQuote.year){
-        quotesHTML += '<span class="year">' + randomQuote.year + '</span>';
+        quotesHTML += '<span class="year"> ' + randomQuote.year +  ' </span>';
     }
     quotesHTML += '</p>';
+    document.body.style.backgroundColor = rgbColor();
     return document.querySelector('#quote-box').innerHTML = quotesHTML;
 }
 
-
+var timeOut = window.setInterval(printQuote, 5000);
 
 /***
   When the "Show another quote" button is clicked, the event listener
