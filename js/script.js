@@ -11,6 +11,7 @@ project 1 - A Random Quote Generator
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
 var usedQuotes = []
+var timeOut;
 
 function getRandomQuote(){
   var randomNumber = Math.floor(Math.random() * quotes.length);
@@ -60,8 +61,8 @@ function printQuote(){
     document.body.style.backgroundColor = rgbColor();
     return document.getElementById('quote-box').innerHTML = quotesHTML;
 }
-
-var timeOut = window.setInterval(printQuote, 10000);
+console.log(printQuote());
+ timeOut = window.setInterval(printQuote, 10000);
 
 /***
   When the "Show another quote" button is clicked, the event listener
