@@ -15,12 +15,11 @@ var usedQuotes = []
 function getRandomQuote(){
   var randomNumber = Math.floor(Math.random() * quotes.length);
   var getQuotes = quotes[randomNumber];
-      usedQuotes.push(getQuotes);
-      quotes.splice(randomNumber, 1);
-if(quotes.length === 0){
-  quotes = usedQuotes;
-  usedQuotes = [];
-
+    usedQuotes.push(getQuotes);
+    quotes.splice(randomNumber, 1);
+    if(quotes.length === 0){
+      quotes = usedQuotes;
+      usedQuotes = [];
 }
   return getQuotes;
 }
@@ -62,7 +61,7 @@ function printQuote(){
     return document.getElementById('quote-box').innerHTML = quotesHTML;
 }
 
-var timeOut = window.setInterval(printQuote, 2000);
+var timeOut = window.setInterval(printQuote, 10000);
 
 /***
   When the "Show another quote" button is clicked, the event listener
