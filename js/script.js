@@ -3,28 +3,36 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
+//Title: Treehouse Project 1
+//Project: Random Quote Generator
+//Goal: exceed expectation
 
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number
-   - Cse the random number to `return` a random quote object from the `quotes` array.
-***/
-var usedQuotes = []
+//The comments below are in order of how i proceeded throug the Project
+//Create the quots array in a different file(quotes.js) to keep things organized
+
+
+//create a variable (timerOut) that holds the setInterval() methods and give it the printQuote() and 10000 millseconds for parameters
 var timeOut;
+//create a variable(usedQuotes) to hold an empty array that stores quotes thats been projected
+var usedQuotes = [];
 
+//create a function(getRandomQuote) to retrieve a random quote from the quotes array
 function getRandomQuote(){
   var randomNumber = Math.floor(Math.random() * quotes.length);
   var getQuotes = quotes[randomNumber];
+  //push the already projected quotes to the empty array(usedQuotes[])
     usedQuotes.push(getQuotes);
-    quotes.splice(randomNumber, 1);
+    //create a splice method that removes a quote from the quotes array each time it runs and an 'if' statement
+    //that recycles quotes beween the quotes and usedQuotes array
+  quotes.splice(randomNumber, 1);
     if(quotes.length === 0){
       quotes = usedQuotes;
       usedQuotes = [];
 }
   return getQuotes;
 }
-
+//create a function(rgbColor) that returns a random color and added it to the printQuote function to produce
+//random background-color each time through the quotes
 function rgbColor(){
  var randomRgb = 'rgb(';
   randomRgb += Math.floor(Math.random() * 255) + ',';
@@ -36,18 +44,9 @@ function rgbColor(){
 
 
 
-/***
-  Create the `printQuote` function to:
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string.
-***/
+//create a function(printQuote) that calls the getRandomQuote() function and stores the returned quote object in a variable
+//construct a string in the printQuote() function containing different properties of the quote object and prints out the final
+// html to the page using the innerHTML on the 'quote-box' div
 function printQuote(){
   var randomQuote = getRandomQuote();
   var quotesHTML = '<p class="quote"> ' + randomQuote.quote + ' </p>';
@@ -58,19 +57,16 @@ function printQuote(){
         quotesHTML += '<span class="year"> ' + randomQuote.year +  ' </span>';
     }
     quotesHTML += '</p>';
+    //called the rgbColor() on the documents body backgroundColor in the printQuote();
+    //So each time the printQuote() is called so is a random backgroundColor along with
     document.body.style.backgroundColor = rgbColor();
     return document.getElementById('quote-box').innerHTML = quotesHTML;
 }
-console.log(printQuote());
+//create a variable (timerOut) that holds the setInterval() methods and give it the printQuote() and 10000 millseconds for parameters
  timeOut = window.setInterval(printQuote, 10000);
 
-/***
-  When the "Show another quote" button is clicked, the event listener
-  below will be triggered, and it will call, or "invoke", the `printQuote`
-  function. So do not make any changes to the line of code below this
-  comment.
-***/
 
+//The button selected and given an addEventListener, shows a different quote each time clicked
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
