@@ -10,9 +10,18 @@ project 1 - A Random Quote Generator
    - Create a variable to store a random number
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
+var usedQuotes = []
+
 function getRandomQuote(){
   var randomNumber = Math.floor(Math.random() * quotes.length);
   var getQuotes = quotes[randomNumber];
+      usedQuotes.push(getQuotes);
+      quotes.splice(randomNumber, 1);
+if(quotes.length === 0){
+  quotes = usedQuotes;
+  usedQuotes = [];
+
+}
   return getQuotes;
 }
 
@@ -50,10 +59,10 @@ function printQuote(){
     }
     quotesHTML += '</p>';
     document.body.style.backgroundColor = rgbColor();
-    return document.querySelector('#quote-box').innerHTML = quotesHTML;
+    return document.getElementById('quote-box').innerHTML = quotesHTML;
 }
 
-var timeOut = window.setInterval(printQuote, 5000);
+var timeOut = window.setInterval(printQuote, 2000);
 
 /***
   When the "Show another quote" button is clicked, the event listener
