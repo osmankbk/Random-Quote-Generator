@@ -68,6 +68,3 @@ function printQuote(){
 
 //The button selected and given an addEventListener, shows a different quote each time clicked
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
