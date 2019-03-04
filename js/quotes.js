@@ -1,6 +1,6 @@
 //My array of object that holds my quotes
 
-var quotes = [
+let quotes = [
   {
     quote: "When we are no longer able to change a situation, we are challenged to change ourselves.",
     source: "Viktor E. Frankl",

@@ -12,15 +12,15 @@ project 1 - A Random Quote Generator
 
 
 //create a variable (timerOut) that holds the setInterval() methods and give it the printQuote() and 10000 millseconds for parameters
-var timeOut;
+let timeOut;
 //create a variable(usedQuotes) to hold an empty array that stores quotes thats been projected
-var usedQuotes = [];
-var loadButton = document.getElementById('loadQuote');
+let usedQuotes = [];
+const loadButton = document.getElementById('loadQuote');
 
 //create a function(getRandomQuote) to retrieve a random quote from the quotes array
-function getRandomQuote(){
-  var randomNumber = Math.floor(Math.random() * quotes.length);
-  var getQuotes = quotes[randomNumber];
+const getRandomQuote = () => {
+  const randomNumber = Math.floor(Math.random() * quotes.length);
+  let getQuotes = quotes[randomNumber];
   //push the already projected quotes to the empty array(usedQuotes[])
     usedQuotes.push(getQuotes);
     //create a splice method that removes a quote from the quotes array each time it runs and an 'if' statement
@@ -34,8 +34,8 @@ function getRandomQuote(){
 }
 //create a function(rgbColor) that returns a random color and added it to the printQuote function to produce
 //random background-color each time through the quotes
-function rgbColor(){
- var randomRgb = 'rgb(';
+const rgbColor = () => {
+ let randomRgb = 'rgb(';
   randomRgb += Math.floor(Math.random() * 255) + ',';
   randomRgb += Math.floor(Math.random() * 255) + ',';
   randomRgb += Math.floor(Math.random() * 255);
@@ -48,9 +48,9 @@ function rgbColor(){
 //create a function(printQuote) that calls the getRandomQuote() function and stores the returned quote object in a variable
 //construct a string in the printQuote() function containing different properties of the quote object and prints out the final
 // html to the page using the innerHTML on the 'quote-box' div
-function printQuote(){
-  var randomQuote = getRandomQuote();
-  var quotesHTML = '<p class="quote"> ' + randomQuote.quote + ' </p>';
+const printQuote = () => {
+  let randomQuote = getRandomQuote();
+  let quotesHTML = '<p class="quote"> ' + randomQuote.quote + ' </p>';
     quotesHTML += '<p class="source"> ' + randomQuote.source + ',';
       if(randomQuote.citation){
         quotesHTML += '<span class"citation"> ' + randomQuote.citation + ' </span>';
