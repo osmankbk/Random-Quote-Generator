@@ -15,6 +15,7 @@ project 1 - A Random Quote Generator
 var timeOut;
 //create a variable(usedQuotes) to hold an empty array that stores quotes thats been projected
 var usedQuotes = [];
+var loadButton = document.getElementById('loadQuote');
 
 //create a function(getRandomQuote) to retrieve a random quote from the quotes array
 function getRandomQuote(){
@@ -67,4 +68,9 @@ function printQuote(){
 
 
 //The button selected and given an addEventListener, shows a different quote each time clicked
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+loadButton.addEventListener("click", () => {
+    printQuote();
+    clearInterval(timeOut);
+    timeOut = window.setInterval(printQuote, 10000);
+
+});
