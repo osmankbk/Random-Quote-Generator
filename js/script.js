@@ -51,13 +51,9 @@ const rgbColor = () => {
 const printQuote = () => {
   let randomQuote = getRandomQuote();
   let quotesHTML = '<p class="quote"> ' + randomQuote.quote + ' </p>';
-    quotesHTML += '<p class="source"> ' + randomQuote.source + ',';
-      if(randomQuote.citation){
-        quotesHTML += '<span class"citation"> ' + randomQuote.citation + ' </span>';
-    } if(randomQuote.year){
-        quotesHTML += '<span class="year"> ' + randomQuote.year +  ' </span>';
-    }
-    quotesHTML += '</p>';
+    quotesHTML += '<p class="source"> ' + randomQuote.source + '</p>';
+    quotesHTML += '<span class"citation"> ' + randomQuote.citation + ' </span>';
+    quotesHTML += '<span class="year"> ' + randomQuote.year +  ' </span>';  
     //called the rgbColor() on the documents body backgroundColor in the printQuote();
     //So each time the printQuote() is called so is a random backgroundColor along with
     document.body.style.backgroundColor = rgbColor();
