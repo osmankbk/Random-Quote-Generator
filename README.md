@@ -12,3 +12,8 @@ FEATURES:
 .Gave it a button that when clicked a different quote is shown and a timer that does the same after every 10sec.
 
 .I also gave the page a random backgroundColor: a different color is shown each time the page refreshes.
+
+
+![random quot generator screen shot](https://github.com/osmankbk/Random-Quote-Generator/blob/master/images/ss1.png)
+![random quot generator screen shot](https://github.com/osmankbk/Random-Quote-Generator/blob/master/images/ss2.png)
+![random quot generator screen shot](https://github.com/osmankbk/Random-Quote-Generator/blob/master/images/ss3.png)
