@@ -13,6 +13,8 @@ FEATURES:
 
 .I also gave the page a random backgroundColor: a different color is shown each time the page refreshes.
 
+.To see live version; download/clone and run with live server. 
+
 
 ![random quot generator screen shot](https://github.com/osmankbk/Random-Quote-Generator/blob/master/images/ss1.png)
 ![random quot generator screen shot](https://github.com/osmankbk/Random-Quote-Generator/blob/master/images/ss2.png)
